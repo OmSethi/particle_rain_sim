@@ -47,9 +47,12 @@ int main() {
 
         // draw each particle
         for (int i = 0; i < 500; i++) {
-            sf::RectangleShape drop(sf::Vector2f(2.f, 10.f));
+            sf::CircleShape drop(1.f);
+            drop.setFillColor(sf::Color(0, 0, 255));
+            drop.setRadius(2.f);
+            drop.setPointCount(50);
+            
             drop.setPosition({particles[i].x, particles[i].y});
-            drop.setFillColor(sf::Color::Cyan);
             window.draw(drop);
         }
         // show the new frame
